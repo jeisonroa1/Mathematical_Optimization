@@ -1,10 +1,10 @@
-%% Metodo de Newton - Optimizaci髇 Matem醫ica
+%% Metodo de Newton - Optimizaci贸n Matem谩tica
 %% Jeison Ivan Roa M.
 clear all
 close all
 clc
-%% Inicializaci髇 Variables
-d1Min = 0.1;              % Valor de precisi髇 de la busqueda
+%% Inicializaci贸n Variables
+d1Min = 0.1;              % Valor de precisi贸n de la busqueda
 a = 0;                     % Intervalo de busqueda
 b = 7;
 rng('shuffle');            % Cambia la semilla para los numeros aleatorios
@@ -16,19 +16,18 @@ xk = [];
 %% Inicio algoritmo 
 
 while  abs(dx)>d1Min 
-    %Paso 1: Se determina la direcci髇 de busqueda.
+    %Paso 1: Se determina la direcci贸n de busqueda.
     dx = derivada1(x);                % Se halla la primera derivada en el punto actual.
     ddx = derivada2(x);                % Se halla la segunda derivada en el punto actual.
     %Paso 2: Calculo del delta
     delta = -dx/ddx;
-    %Paso 3: Desplazamiento en direcci髇 del delta.
+    %Paso 3: Desplazamiento en direcci贸n del delta.
     x = x +(0.5*delta); 
     xk(cont)=x;
     cont = cont+1;
 end
 x
 cont
-
 
 
 %% Grafica
@@ -41,10 +40,10 @@ hold on
 scatter(xk,foptimos);
 axis([-0 7 -2500 1500])
 set (gca,'fontsize',12); 
-title ('M閠odo de Newton - Variable 鷑ica');
+title ('M茅todo de Newton - Variable 煤nica');
 xlabel ('x');
 ylabel ('y');
-legend('Funci髇','Iteraciones')
+legend('Funci贸n','Iteraciones')
 
 
 
